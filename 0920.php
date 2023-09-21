@@ -14,5 +14,18 @@
         echo "連結成功";
     }*/
 
-    header("Location: index.php");
+
+    if(!isset($_SESSION["submit"])){
+        //echo "yes";
+        $nowtime=date("YmdHGis");  //日期年月日時分秒
+        //echo "$nowtime";
+        $sql="INSERT INTO mydetail (id,turn,rec)";
+        $sql.=VALUES($nowtime,)
+    }else{
+        echo "no";
+    }
+
+    
+
+    //header("Location: index.php");
 ?>
