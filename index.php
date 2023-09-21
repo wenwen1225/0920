@@ -25,16 +25,20 @@
         $newnum[1]=rand(0,10);
         $newnum[2]=rand(0,10);
         
-        /*foreach($newnum as $element){
-            echo "$element ,";
-        }*/
         $num[]=$newnum;
+
+        foreach($num as $element){
+            print_r($element);
+        }
+        echo "<br/>";  //無法換行
+    
+        /*$num[]=$newnum;
         /*print_r ($num);
-        echo "<br>";*/
-        echo "<pre>";
+        echo "<br>";
+        //echo "<pre>";
         print_r($num);
-        echo "</pre>";
-        echo "<br>"; 
+        //echo "</pre>";
+        echo "<br>"; */
 
         $time++;
 
