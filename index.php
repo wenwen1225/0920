@@ -19,7 +19,7 @@
     $time=isset($_SESSION['time']) ? $_SESSION['time'] : 0;
     $num=isset($_SESSION['num']) ? $_SESSION['num'] : array();
     
-    if($time>0){
+    if($time<11){
         $newnum=array();
         $newnum[0]=rand(0,10);
         $newnum[1]=rand(0,10);
@@ -29,27 +29,25 @@
             echo "$element ,";
         }*/
         $num[]=$newnum;
-        print_r ($newnum);
+        /*print_r ($num);
+        echo "<br>";*/
+        echo "<pre>";
+        print_r($num);
+        echo "</pre>";
+        echo "<br>"; 
 
         $time++;
 
         $_SESSION['num']=$num;
         $_SESSION['time']=$time;
-    }
 
-    /*$link=@mysqli_connect(
-        'localhost',
-        'root',
-        '',
-        '0920php'
-    );
-
-    if(!$link){
-        echo "連接錯誤";
-        exit();
     }else{
-        echo "連結成功";
-    }*/
+        echo "總共試了10次或已經找到數字囉!";
+        $time=0;
+        $_SESSION['time']=$time;  //清除次數
+        unset($num);
+        $_SESSION['num']=$num;
+    }
 
 ?>
 </form>
