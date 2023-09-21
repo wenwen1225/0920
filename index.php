@@ -19,7 +19,7 @@
     $time=isset($_SESSION['time']) ? $_SESSION['time'] : 0;
     $num=isset($_SESSION['num']) ? $_SESSION['num'] : array();
     
-    if($time<11){
+    if($time<10){
         $newnum=array();
         $newnum[0]=rand(0,10);
         $newnum[1]=rand(0,10);
@@ -31,6 +31,11 @@
             print_r($element);
         }
         echo "<br/>";  //無法換行
+
+        $a=$num[0];
+        $b=$num[1];
+        $c=$num[2];
+
     
         /*$num[]=$newnum;
         /*print_r ($num);

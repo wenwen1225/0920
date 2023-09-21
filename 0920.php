@@ -19,8 +19,10 @@
         //echo "yes";
         $nowtime=date("YmdHGis");  //日期年月日時分秒
         //echo "$nowtime";
-        $sql="INSERT INTO mydetail (id,turn,rec)";
-        $sql.=VALUES($nowtime,)
+        /*$sql="INSERT INTO mydetail (id,turn,rec)";
+        $sql.=VALUES($nowtime,$_SESSION['time'],)*/
+        //echo "<br />".$_SESSION['time'];  //測試前面的次數值
+        //echo "<br />".$_SESSION['num']; 無法顯示
     }else{
         echo "no";
     }
