@@ -29,10 +29,10 @@
 
         foreach($num as $element){
             print_r($element);
+            echo "<br/>";
         }
-        echo "<br/>";  //無法換行
 
-        $a=$num[0];
+        /*$a=$num[0];
         $b=$num[1];
         $c=$num[2];
 
