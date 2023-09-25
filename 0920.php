@@ -7,7 +7,7 @@
         '0920php'
     );
 
-    /*if(!$link){
+    /*if(!$link){  //陣列連線確認
         echo "連接錯誤";
         exit();
     }else{
@@ -20,14 +20,14 @@
         $nowtime=date("YmdHGis");  //日期年月日時分秒
         //echo "$nowtime";
         /*$sql="INSERT INTO mydetail (id,turn,rec)";
-        $sql.=VALUES($nowtime,$_SESSION['time'],)*/
+        $sql.=VALUES($nowtime,$_SESSION['time'],?)*/  //陣列寫入資料庫
         //echo "<br />".$_SESSION['time'];  //測試前面的次數值
-        //echo "<br />".$_SESSION['num']; 無法顯示
+        echo "<br />".$_SESSION['val']; //無法顯示
     }else{
         echo "no";
     }
 
     
 
-    header("Location: index.php");
+    //header("Location: index.php");
 ?>

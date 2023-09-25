@@ -21,21 +21,27 @@
     
     if($time<10){
         $newnum=array();
-        $newnum[0]=rand(0,10);
+        $newnum[0]=rand(0,10);  //亂數1.2.3
         $newnum[1]=rand(0,10);
         $newnum[2]=rand(0,10);
         
         $num[]=$newnum;
 
-        foreach($num as $element){
+        foreach($num as $element){  //顯示陣列
             print_r($element);
             echo "<br/>";
         }
 
-        /*$a=$num[0];
+        for($i=0;$i<count($num);$i++){
+            $val=$num[$i];
+            echo $val;
+        }
+
+
+        $a=$num[0];
         $b=$num[1];
         $c=$num[2];
-
+        $val=implode($num); //可以串接陣列值 無法顯示
     
         /*$num[]=$newnum;
         /*print_r ($num);
@@ -46,7 +52,7 @@
         echo "<br>"; */
 
         $time++;
-
+        $_SESSION['val']=$val;
         $_SESSION['num']=$num;
         $_SESSION['time']=$time;
 
