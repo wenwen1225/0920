@@ -19,12 +19,12 @@
         //echo "yes";
         $nowtime=date("YmdHGis");  //日期年月日時分秒
         //echo "$nowtime";
-        /*$sql="INSERT INTO mydetail (id,turn,rec)";
-        $sql.=VALUES($nowtime,$_SESSION['time'],?)*/  //陣列寫入資料庫
-        //echo "<br />".$_SESSION['time'];  //測試前面的次數值
+        /*$sql1="INSERT INTO 'mymaster' ('id','freq') VALUE($nowtime,$_SESSION['freq'])";
+        $sql2="INSERT INTO 'mydetail' ('id','turn','rec') VALUES($nowtime,$_SESSION['freq'],?)*/  //陣列寫入資料庫
+        //echo "<br />".$_SESSION['freq'];  //測試前面的次數值
         echo "<br />".$_SESSION['val']; //無法顯示
     }else{
-        echo "no";
+        mysql_error(操作錯誤);
     }
 
     
