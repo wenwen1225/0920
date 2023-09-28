@@ -22,15 +22,15 @@
         //echo "<br>"."$fre";
         $value=$_SESSION['val'];
         //echo "<br>"."$value";
-        $sql1="INSERT INTO 'mymaster' ('id','freq') VALUES('$nowtime','$fre')";
+        $sql1="INSERT INTO `mymaster` (`id`,`freq`) VALUES('$nowtime','$fre')";
         //echo $sql1;
         mysqli_query($link, $sql1);
 
-        /*$sql2="INSERT INTO 'mydetail' ('id','turn','rec') VALUES('$nowtime','$fre','$value')";
+        $sql2="INSERT INTO `mydetail` (`id`,`turn`,`rec`) VALUES('$nowtime','$fre','$value')";
         //echo "<br>".$sql2;
-        mysqli_query($link, $sql2);*/
+        mysqli_query($link, $sql2);
     }else{
-        mysql_error(操作錯誤);
+        mysqli_error(操作錯誤);
     }
 
     mysqli_close($link);
