@@ -16,21 +16,22 @@
 
     if(!isset($_SESSION["submit"])){
         //echo "yes";
-        $nowtime=date("YmdHGis");  //日期年月日時分秒
+        //$nowtime=date("YmdHGis");  //日期年月日時分秒
+        $nowtime=$_SESSION['nowtime'];
         //echo "$nowtime";
-        $fre=$_SESSION['freq']+1;  //次數
+        $freq=$_SESSION['freq']+1;  //次數
         //echo "<br>"."$fre";
-        $value=$_SESSION['val'];
+        $value=$_SESSION['val'];  //陣列值
         //echo "<br>"."$value";
-        $sql1="INSERT INTO `mymaster` (`id`,`freq`) VALUES('$nowtime','$fre')";
+        $sql1="INSERT INTO `mymaster` (`id`,`freq`) VALUES('$nowtime','$freq')";
         //echo $sql1;
         mysqli_query($link, $sql1);
 
-        $sql2="INSERT INTO `mydetail` (`id`,`turn`,`rec`) VALUES('$nowtime','$fre','$value')";
+        $sql2="INSERT INTO `mydetail` (`id`,`turn`,`rec`) VALUES('$nowtime','$freq','$value')";
         //echo "<br>".$sql2;
         mysqli_query($link, $sql2);
     }else{
-        mysqli_error(操作錯誤);
+        mysqli_error("操作錯誤");
     }
 
     mysqli_close($link);

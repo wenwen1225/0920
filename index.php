@@ -21,12 +21,18 @@
     
     if($freq<9){
         $newnum=array();
-        $newnum[0]=rand(0,9);  //亂數1.2.3
-        $newnum[1]=rand(0,9);
-        $newnum[2]=rand(0,9);
+        while(count($newnum)<3){
+            $rnum=random_int(0,9);
 
-        $val=implode($newnum);
-        //echo $val;
+            if(!in_array($rnum,$newnum)){
+                $newnum[]=$rnum;
+            }
+        }
+        /*for($i=0;$i<3;$i++){
+            $newnum[$i]=rand(0,9);  //亂數
+        }*/
+
+        $val=implode($newnum);//echo $val;
         $num[]=$newnum; 
 
         foreach($num as $element){  //顯示陣列
@@ -37,12 +43,6 @@
         $a=$newnum[0];  
         $b=$newnum[1];
         $c=$newnum[2];
-        
-        /*if($a!=$b && $b!=$c && $a!=$c){  //比對數值是否依樣 未完成
-            break;
-        }else{
-
-        }*/
 
         $ans1=abs($c-$b);
         $ans2=abs($b-$a);
@@ -53,22 +53,28 @@
             $_SESSION['val']=$val;
             $_SESSION['num']=$num;
             $_SESSION['freq']=$freq;
+            $nowtime=date("YmdHGis");
+            $_SESSION['nowtime']=$nowtime;
 
             /*$freq=0;
             $_SESSION['freq']=$freq;  //清除次數
-            unset($num);
+            session_unset($num);
             $_SESSION['num']=$num;*/
             require_once('0920.php');
         }else{
-            $freq++;
+            $freq += 1;
             $_SESSION['val']=$val;
             $_SESSION['num']=$num;
             $_SESSION['freq']=$freq;
+            $nowtime=date("YmdHGis");
+            $_SESSION['nowtime']=$nowtime;
         }
     }else{
         echo "總共試了10次或已經找到數字囉!";
         $freq=0;
         $_SESSION['freq']=$freq;  //清除次數
+        $nowtime=date("YmdHGis");
+        $_SESSION['nowtime']=$nowtime;
         $_SESSION['num'] = array();
     }
 
