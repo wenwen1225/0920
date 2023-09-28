@@ -25,7 +25,7 @@
         $newnum[1]=rand(0,9);
         $newnum[2]=rand(0,9);
         
-        $num[]=$newnum;
+        $num[]=$newnum; 
 
         foreach($num as $element){  //顯示陣列
             print_r($element);
@@ -36,7 +36,7 @@
             $val=$num[$i];
             echo $val;
         }*/
-        $a=$newnum[0];
+        $a=$newnum[0];  
         $b=$newnum[1];
         $c=$newnum[2];
         echo $a;
@@ -47,6 +47,11 @@
         echo $ans1;
         echo $ans2;
 
+        $val="";
+        foreach($num as $arrnum){
+            $val.=implode(", ",$arrnum)."<br>";
+        }//echo $val;
+
         $nowtime=date("YmdHGis"); //現在時間
 
         if($ans1==$ans2){
@@ -55,22 +60,10 @@
         }else{
             echo "no";
         }
-
-        /*$a=$num[0];
-        $b=$num[1];
-        $c=$num[2];
-        $val=implode($num); //可以串接陣列值 無法顯示
     
-        /*$num[]=$newnum;
-        /*print_r ($num);
-        echo "<br>";
-        //echo "<pre>";
-        print_r($num);
-        //echo "</pre>";
-        echo "<br>"; */
 
         $freq++;
-        //$_SESSION['val']=$val;
+        $_SESSION['val']=$val;
         $_SESSION['num']=$num;
         $_SESSION['freq']=$freq;
 
