@@ -4,7 +4,7 @@
         'localhost',
         'root',
         '',
-        '0920php'
+        '107php'
     );
 
     /*if(!$link){  //陣列連線確認
